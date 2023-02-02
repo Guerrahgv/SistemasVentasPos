@@ -19,10 +19,10 @@ if(!empty($array[2])){
          $parametro=trim($parametro, ",");
     }
 }
-
-$dirController="Controller/".$controller.".php";
-if(file_exists($dirController)){
-    require_once $dirController;
+require_once "Config/App/autoload.php";
+$dirControllers="Controllers/".$controller.".php";
+if(file_exists($dirControllers)){
+    require_once $dirControllers;
     $controller = new $controller();
     if(method_exists($controller, $metodo)){
         $controller->$metodo($parametro);
