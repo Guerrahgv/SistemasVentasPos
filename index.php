@@ -21,8 +21,8 @@ if(!empty($array[2])){
 }
 
 $dirController="Controller/".$controller.".php";
-if(file_exists($controller)){
-    require_once $controller;
+if(file_exists($dirController)){
+    require_once $dirController;
     $controller = new $controller();
     if(method_exists($controller, $metodo)){
         $controller->$metodo($parametro);
